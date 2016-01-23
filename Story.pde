@@ -46,7 +46,7 @@ Story(){
   images[i+81] = loadImage("fivewin/win/0"+i+".png");//1-5 82-86
  }
  for(int i=1;i<65;i++){
-  images[i+86] = loadImage("fivewin/win/win/0"+i+".png");//1-61 87-150
+  images[i+86] = loadImage("fivewin/win/win/0"+i+".png");//1-64 87-150
  }
   
  

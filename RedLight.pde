@@ -11,6 +11,7 @@ RedLight(){
 void draw(){
    // background(0);
   //  tintR=0;
+  if(!effect4.isPlaying()){effect4.play();} 
     tintR+=51;
     tint(tintR,255);
     image(red,0,0);
