@@ -61,11 +61,12 @@ int redtint,redtint1,redtint2;
 
 
 import processing.video.*;
-Movie ED;
+//Movie ED;
 White white;
 AudioPlayer talk1,talk2,talk3,talk4,talk5,talk6,talk7;
 AudioPlayer effect1,effect2,effect3,effect4,effect5,effect6;
 AudioPlayer effect7,effect8,effect9,effect10,effect11,effect12;
+AudioPlayer endSong;
 
 Medicine MED1;
 Medicine MED2;
@@ -78,6 +79,9 @@ SlowDownDrug Slow_1;
 SlowDownDrug Slow_2;
 
 int timerM=0;
+PImage ed;
+float edY=50;
+float turnblack2=255;
 
 void setup(){
   size(640,480);
@@ -106,7 +110,7 @@ void setup(){
   effect9=minim.loadFile("music/effect/4fall.mp3");
   effect10=minim.loadFile("music/effect/4kill5.mp3");
   effect11=minim.loadFile("music/effect/start.mp3");
-//  effect12=minim.loadFile("music/effect/intowater.mp3");
+  endSong= minim.loadFile("music/ED.wav");
   //startSong.play();
   //startSong.loop();
   //song1.play();
@@ -160,7 +164,8 @@ void setup(){
   Slow_1=new SlowDownDrug(490,height/2);
   Slow_2=new SlowDownDrug(135,160);
 
-   ED = new Movie(this, "ED.mp4");
+ // ED = new Movie(this, "ED.mp4");
+  ed=loadImage("ED.png");
 }
 
 void movieEvent(Movie m) {
@@ -296,14 +301,13 @@ void draw(){
                 timer++;
                }
                 
-                if(five.x>width/2 && five.x<500 && five.y<120){
+                if(five.x>390 && five.x<500 && five.y<120){
                 if(knife.isSetDirection){knife.moveForward();}
                 else{knife.setDirection(3,1);}
                 
                 //timer=0;
                 timer++;
-                
-                
+                                
                //  kt=false;
              }
               if(five.x>=200 && five.x<280){
@@ -355,7 +359,7 @@ void draw(){
                 timer++;
               //   kt=false;
             }
-               if(five.x>=390 && five.x<520 && five.y<130){
+              if(five.x>=390 && five.x<520 && five.y<130){
                 if(knife.isSetDirection){knife.moveForward();}
                 else{knife.setDirection(6,-1);}
                  
@@ -491,17 +495,31 @@ void draw(){
                  }   
               if(story.currentImage==149){ 
              //   story.stop();
-               image(ED, 0, 0, width, height);
+             /*  image(ED, 0, 0, width, height);
                 ED.play();
                 float t =ED.time();
                 if(t>97.079){
                 restartGame();                
-              }
-              }
+              }*/
+              tint(turnblack2,255);
+              image(ed,0,edY);              
+              if(!endSong.isLooping()){endSong.loop();}
+              edY--;
+              if(edY<=-3750){
+               edY=-3750; 
+               turnblack2-=0.4;
+                if(turnblack2<=0){
+                 endSong.pause();
+                 turnblack2=255; 
+                 background(0);
+                 tint(255,255);
+                 restartGame();
+               
+                 }
+              }}
               
             break;
-          
-            
+                      
           case e: 
              story.stkp=true;
              //  story. curImagee=7;
@@ -516,23 +534,20 @@ void draw(){
                story.stop();
              }
             break;
+            
           case f: 
-           
               mainLose.stkp=true;
-              mainLose.draw();
-            
-            
+              mainLose.draw();                        
             if(mainLose.currentImage==3){
               gameState=GAME_OVER;
               mainLose.stop();
             }
             break;
+            
           case g:
               story.stop();
               mainLose2.stkp=true;
-              mainLose2.draw();
-            
-                             
+              mainLose2.draw();                                        
            if(mainLose2.currentImage==7){
                 gameState=GAME_OVER;
                 mainLose2.stop();
@@ -618,6 +633,7 @@ void draw(){
               }
     
       break;
+    
   }//gamestate
 }//draw
 
@@ -667,7 +683,7 @@ boolean isHit(float ax, float ay, float aw, float ah, float bx, float by, float 
 
 
 void restartGame(){
- gameState=0;
+gameState=0;
 insideGameState=0;
 minorEnd = 0;
 start1 =null;
@@ -719,7 +735,7 @@ redtint=0;
 redtint1=0;
 redtint2=0;
 
-ED=null;
+//ED=null;
 white=null;
 
 talk1=null;
@@ -752,5 +768,10 @@ POI_30_1=null;
 POI_30_2=null;
 Slow_1=null;
 Slow_2=null;
+
+ed=null;
+edY=50;
+turnblack2=255;
+endSong=null;
 setup();
 }
