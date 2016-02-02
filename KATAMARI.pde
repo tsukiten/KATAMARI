@@ -207,12 +207,12 @@ void draw(){
          if(!talk1.isLooping()){talk1.loop();} 
          tint(turnblack1,255);
          image(summary,0,0);
-         turnblack1-=5; //0.3
+         turnblack1-=2; //0.3
           if(turnblack1<=0){
           turnblack1=0;
            tint(255,fadein);
            image(livingroom1,0,0);
-           fadein+=3;} //3
+           fadein+=5;} //3
             if(fadein>=255){
               story.stkp=true;
               story.draw();
