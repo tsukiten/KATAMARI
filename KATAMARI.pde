@@ -386,6 +386,7 @@ void draw(){
              if(!effect10.isPlaying()){effect10.play();} 
           
                if(red.tintR>=255){
+                 red.tintR=255;
                  effect10.pause();
                gameState =GAME_RUNN ;
                
@@ -575,7 +576,7 @@ void draw(){
      
      break;
     case GAME_RUNN:       
-       
+        background(0);
         minorLose.stkp=false;
         minorStory.stkp=true;
         minorStory.draw();
