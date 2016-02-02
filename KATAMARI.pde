@@ -504,10 +504,10 @@ void draw(){
               tint(turnblack2,255);
               image(ed,0,edY);              
               if(!endSong.isLooping()){endSong.loop();}
-              edY-=10; //1
+              edY-=375; //1
               if(edY<=-3750){
                edY=-3750; 
-               turnblack2-=0.4; //0.4
+               turnblack2-=2; //0.4
                 if(turnblack2<=0){
                  endSong.pause();
                  turnblack2=255; 
