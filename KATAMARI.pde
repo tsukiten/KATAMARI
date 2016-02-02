@@ -207,7 +207,7 @@ void draw(){
          if(!talk1.isLooping()){talk1.loop();} 
          tint(turnblack1,255);
          image(summary,0,0);
-         turnblack1-=0.3; 
+         turnblack1-=0.4; 
           if(turnblack1<=0){
            tint(255,fadein);
            image(livingroom1,0,0);
