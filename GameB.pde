@@ -33,7 +33,7 @@ void draw(){
     image(tip,0,0);
     fill(255,255,0);
     rect(220,423,powerX,17);
-    image(five.hp,210,420);
+    image(five.hpImg,210,420);
     fill(0,230,230);
     textFont(power, 60);
     textAlign(LEFT);
