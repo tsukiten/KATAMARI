@@ -2,7 +2,7 @@ class Five{
   int x;
   int y;
   int hpx=180;
-  PImage hp;
+  PImage hpImg;
   
   PImage [] up = new PImage[3];
   PImage [] left = new PImage[3];
@@ -35,7 +35,7 @@ class Five{
     
     x=width/2;
     y=435;
-    hp=loadImage("hp.png");
+    hpImg=loadImage("hp.png");
   }
   int currentFrame = 0;
   void display(){    
@@ -49,8 +49,8 @@ class Five{
     fill(230,0,0);
     rect(32,23,hpx,17);
     imageMode(CORNER);
-    hp=loadImage("hp.png");
-    image(hp,20,20);  
+    hpImg=loadImage("hp.png");
+    image(hpImg,20,20);  
   }
     
   
