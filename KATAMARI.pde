@@ -201,7 +201,7 @@ void draw(){
      effect11.pause();
      tint(turnblack,255);
      image(attention,0,0);
-     turnblack-=3; //1 0.5
+     turnblack-=2; //1 0.5
      if(turnblack<=0){
          turnblack=0;
          if(!talk1.isLooping()){talk1.loop();} 
@@ -212,7 +212,7 @@ void draw(){
           turnblack1=0;
            tint(255,fadein);
            image(livingroom1,0,0);
-           fadein+=5;} //3
+           fadein+=25;} //3
             if(fadein>=255){
               story.stkp=true;
               story.draw();
