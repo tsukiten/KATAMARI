@@ -43,7 +43,7 @@ image(rpg[curFrame], 0, 0);
       if ( curFrame >=88){
         curFrame = 88;
       }   
-      if(curFrame==28){
+      /*if(curFrame==28){
         t=false;
         tint+=0.1;
         tint(tint,255);       
@@ -52,7 +52,7 @@ image(rpg[curFrame], 0, 0);
          tint=255;
          t=true ;
         }
-      }
+      }*/
 }  
    
   
