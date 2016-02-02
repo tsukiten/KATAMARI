@@ -201,14 +201,15 @@ void draw(){
      effect11.pause();
      tint(turnblack,255);
      image(attention,0,0);
-     turnblack-=0.5; //1
+     turnblack-=3; //1 0.5
      if(turnblack<=0){
          turnblack=0;
          if(!talk1.isLooping()){talk1.loop();} 
          tint(turnblack1,255);
          image(summary,0,0);
-         turnblack1-=10; 
+         turnblack1-=5; //0.3
           if(turnblack1<=0){
+          turnblack1=0;
            tint(255,fadein);
            image(livingroom1,0,0);
            fadein+=3;} //3
