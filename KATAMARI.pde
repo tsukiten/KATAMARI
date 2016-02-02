@@ -507,7 +507,7 @@ void draw(){
               edY-=10; //1
               if(edY<=-3750){
                edY=-3750; 
-               turnblack2-=1; //0.4
+               turnblack2-=0.4; //0.4
                 if(turnblack2<=0){
                  endSong.pause();
                  turnblack2=255; 
