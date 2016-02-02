@@ -245,12 +245,12 @@ void keyPressed(){
     || currentImage == 88 || currentImage == 96){
     stkp=false;
     isCurrentFadeInOut = true;
-    fadeSpeed = 5;
+    fadeSpeed = 51;
   }
   if(currentImage == 93){
     stkp=false;
     isCurrentFadeInOut = true;
-    fadeSpeed = 1;
+    fadeSpeed = 20;
   }
  
     
