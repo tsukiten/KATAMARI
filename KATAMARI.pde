@@ -212,7 +212,7 @@ void draw(){
           turnblack1=0;
            tint(255,fadein);
            image(livingroom1,0,0);
-           fadein+=25;} //3
+           fadein+=51;} //3
             if(fadein>=255){
               story.stkp=true;
               story.draw();
